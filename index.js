@@ -11,8 +11,6 @@ mongoose.connect(
 
 requireDir('./src/models');
 
-app.get('/', (req, res) => {
-    res.send('Hello, world!')
-});
+app.use('/api', require('./src/routes'));
 
 app.listen(3001);
