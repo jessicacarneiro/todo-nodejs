@@ -22,5 +22,10 @@ module.exports = {
         const task = await Task.findByIdAndUpdate(req.params.id, req.body, 
             {new: true});
         return res.json(task);
+    },
+
+    async destroy(req, res) {
+        await Task.findByIdAndDelete(req.params.id);
+        return res.send();
     }
 };
